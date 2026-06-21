@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dpsj2nhlcu17"]
+
+[ext_resource type="Texture2D" uid="uid://c216fmvcjqne8" path="res://Assets/background/Rocks 2.png" id="1_mv0hc"]
+[ext_resource type="PackedScene" uid="uid://1qx4koplnyhr" path="res://Scenes/FlameTappy/FlameTappy.tscn" id="2_qxfds"]
+[ext_resource type="PackedScene" uid="uid://c1ygmy5a4tv4f" path="res://Scenes/Barrier/Barrier.tscn" id="3_qikps"]
+[ext_resource type="PackedScene" uid="uid://b7m1ub4mwcdjl" path="res://Scenes/Ruinss/Ruinss.tscn" id="4_i1e5p"]
+
+[node name="Game" type="Node" unique_id=970819176]
+
+[node name="Rocks2" type="Sprite2D" parent="." unique_id=332866850]
+position = Vector2(636, 206)
+texture = ExtResource("1_mv0hc")
+
+[node name="FlameTappy" parent="." unique_id=1557961098 instance=ExtResource("2_qxfds")]
+position = Vector2(181, 512)
+
+[node name="Barrier" parent="." unique_id=341107467 instance=ExtResource("3_qikps")]
+
+[node name="Ruinss" parent="." unique_id=724256442 instance=ExtResource("4_i1e5p")]
+position = Vector2(1619, 437)

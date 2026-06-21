@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmlvrjfsr02qx"
+path="res://.godot/imported/Menu starting Magic Wind Chimes Sound Effect (HD).mp3-dcc770c10af055584a4c94f76255aacc.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/Menu starting Magic Wind Chimes Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Menu starting Magic Wind Chimes Sound Effect (HD).mp3-dcc770c10af055584a4c94f76255aacc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

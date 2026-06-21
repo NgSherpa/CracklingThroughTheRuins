@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://bfmtmsm77uhsm"]
+
+[ext_resource type="Texture2D" uid="uid://ptxaob34tmbc" path="res://Assets/Sparkles aka laser/Untitled_Artwork-1.png" id="1_ut70d"]
+[ext_resource type="Texture2D" uid="uid://ciihyf83kg1tg" path="res://Assets/Sparkles aka laser/Untitled_Artwork-2.png" id="2_efrf4"]
+[ext_resource type="Texture2D" uid="uid://reaybjdmy4fu" path="res://Assets/Sparkles aka laser/Untitled_Artwork-3.png" id="3_b5ltn"]
+[ext_resource type="Texture2D" uid="uid://c7f81y5uh5wdm" path="res://Assets/Sparkles aka laser/Untitled_Artwork-4.png" id="4_gx6wj"]
+[ext_resource type="Texture2D" uid="uid://x52n8hdcpnsg" path="res://Assets/Sparkles aka laser/Untitled_Artwork-5.png" id="5_042of"]
+[ext_resource type="Texture2D" uid="uid://866h6f2cd283" path="res://Assets/Sparkles aka laser/Untitled_Artwork-6.png" id="6_sxvil"]
+[ext_resource type="Texture2D" uid="uid://kynslv8d0nk4" path="res://Assets/Sparkles aka laser/Untitled_Artwork-7.png" id="7_kf2kx"]
+[ext_resource type="Texture2D" uid="uid://8cxmffmxrq07" path="res://Assets/Sparkles aka laser/Untitled_Artwork-8.png" id="8_6md3n"]
+[ext_resource type="Texture2D" uid="uid://d4cd4rxbvxlkp" path="res://Assets/Sparkles aka laser/Untitled_Artwork-9.png" id="9_y5d0o"]
+[ext_resource type="Texture2D" uid="uid://crajg5t7swpl0" path="res://Assets/Sparkles aka laser/Untitled_Artwork-10.png" id="10_sh5q0"]
+[ext_resource type="Texture2D" uid="uid://chrh1bqew3uc6" path="res://Assets/Sparkles aka laser/Untitled_Artwork-11.png" id="11_ekc6n"]
+[ext_resource type="Texture2D" uid="uid://cf10dutgrabmf" path="res://Assets/Sparkles aka laser/Untitled_Artwork-12.png" id="12_r7mxg"]
+[ext_resource type="Texture2D" uid="uid://cbp5l57cnv11m" path="res://Assets/Sparkles aka laser/Untitled_Artwork-13.png" id="13_teia2"]
+[ext_resource type="Texture2D" uid="uid://wessjxdsed6j" path="res://Assets/Sparkles aka laser/Untitled_Artwork-14.png" id="14_b7blh"]
+[ext_resource type="Texture2D" uid="uid://b7liburfwh6px" path="res://Assets/Sparkles aka laser/Untitled_Artwork-15.png" id="15_eorj0"]
+[ext_resource type="Texture2D" uid="uid://bs3ndbnn02rrr" path="res://Assets/Sparkles aka laser/Untitled_Artwork-16.png" id="16_ox3y5"]
+[ext_resource type="Texture2D" uid="uid://myv3cqmv0hbr" path="res://Assets/Sparkles aka laser/Untitled_Artwork-17.png" id="17_ysn1i"]
+[ext_resource type="Texture2D" uid="uid://b4us42uakgxyp" path="res://Assets/Sparkles aka laser/Untitled_Artwork-18.png" id="18_biif6"]
+[ext_resource type="Texture2D" uid="uid://b0ffvsk5xu1ej" path="res://Assets/Sparkles aka laser/Untitled_Artwork-19.png" id="19_o0wov"]
+[ext_resource type="Texture2D" uid="uid://b0rc6lqw6r5qi" path="res://Assets/Sparkles aka laser/Untitled_Artwork-20.png" id="20_be3tb"]
+[ext_resource type="Texture2D" uid="uid://dwwbsgln8e2q8" path="res://Assets/Sparkles aka laser/Untitled_Artwork-21.png" id="21_px3yy"]
+[ext_resource type="Texture2D" uid="uid://c5o7ido44pmcv" path="res://Assets/Sparkles aka laser/Untitled_Artwork-22.png" id="22_5pthq"]
+[ext_resource type="Texture2D" uid="uid://bg4ija6yfoo23" path="res://Assets/Sparkles aka laser/Untitled_Artwork-23.png" id="23_1031p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t548l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ut70d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_efrf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b5ltn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gx6wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_042of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sxvil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kf2kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6md3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_y5d0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sh5q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ekc6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r7mxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_teia2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b7blh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eorj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ox3y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ysn1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_biif6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_o0wov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_be3tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_px3yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5pthq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1031p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut70d"]
+size = Vector2(20, 431)
+
+[node name="Sparkles aka Laser" type="Area2D" unique_id=703480301]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2002948322]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_t548l")
+autoplay = "default"
+frame_progress = 0.004602207
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=13930134]
+position = Vector2(137, 93.5)
+shape = SubResource("RectangleShape2D_ut70d")
