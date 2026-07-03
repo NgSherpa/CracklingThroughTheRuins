@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxalk5v2sa11l"
+path="res://.godot/imported/Leaves Rustling Sound Effect aka score_[cut_1sec].mp3-e6bade452a5196b933ab27ee583ef7c4.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/Leaves Rustling Sound Effect aka score_[cut_1sec].mp3"
+dest_files=["res://.godot/imported/Leaves Rustling Sound Effect aka score_[cut_1sec].mp3-e6bade452a5196b933ab27ee583ef7c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

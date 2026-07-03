@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://dpsj2nhlcu17"]
 
+[ext_resource type="Script" uid="uid://tt6lkg1oyvdp" path="res://Scenes/Game/Game.gd" id="1_i1e5p"]
 [ext_resource type="Texture2D" uid="uid://c216fmvcjqne8" path="res://Assets/background/Rocks 2.png" id="1_mv0hc"]
+[ext_resource type="PackedScene" uid="uid://dv1t400x2g42h" path="res://Scenes/ScrollingBg/ScrollingBg.tscn" id="2_flgk0"]
 [ext_resource type="PackedScene" uid="uid://1qx4koplnyhr" path="res://Scenes/FlameTappy/FlameTappy.tscn" id="2_qxfds"]
 [ext_resource type="PackedScene" uid="uid://c1ygmy5a4tv4f" path="res://Scenes/Barrier/Barrier.tscn" id="3_qikps"]
-[ext_resource type="PackedScene" uid="uid://b7m1ub4mwcdjl" path="res://Scenes/Ruinss/Ruinss.tscn" id="4_i1e5p"]
+[ext_resource type="PackedScene" uid="uid://fdemetysu1eh" path="res://Scenes/GameUI/GameUi.tscn" id="5_ciybh"]
 
 [node name="Game" type="Node" unique_id=970819176]
+script = ExtResource("1_i1e5p")
+
+[node name="ScrollingBg" parent="." unique_id=631154633 instance=ExtResource("2_flgk0")]
 
 [node name="Rocks2" type="Sprite2D" parent="." unique_id=332866850]
+visible = false
 position = Vector2(636, 206)
 texture = ExtResource("1_mv0hc")
 
@@ -16,5 +22,20 @@ position = Vector2(181, 512)
 
 [node name="Barrier" parent="." unique_id=341107467 instance=ExtResource("3_qikps")]
 
-[node name="Ruinss" parent="." unique_id=724256442 instance=ExtResource("4_i1e5p")]
-position = Vector2(1619, 437)
+[node name="RuinsHolder" type="Node" parent="." unique_id=460864130]
+
+[node name="UpperSpawn" type="Marker2D" parent="." unique_id=166117085]
+position = Vector2(2041, 252)
+
+[node name="LowerSpawn" type="Marker2D" parent="." unique_id=1496974781]
+position = Vector2(2041, 854)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1442706976]
+wait_time = 3.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=741134671]
+
+[node name="GameUI" parent="CanvasLayer" unique_id=1639992179 instance=ExtResource("5_ciybh")]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

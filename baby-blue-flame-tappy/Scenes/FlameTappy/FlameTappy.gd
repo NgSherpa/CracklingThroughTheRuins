@@ -7,14 +7,19 @@ var _gravity : float = ProjectSettings.get("physics/2d/default_gravity")
 var _jumped : bool = false
 const JUMP_POWER : float = -350
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var thrust: AnimationPlayer = $Thrust
 
 # Called when the node enters the scene tree for the first time.
 
 func _unhandled_input(event: InputEvent) -> void:
+	
 	if event.is_action_pressed("power"):
-		_jumped = true
+			_jumped = true
+	
 	if event is InputEventScreenTouch:
 		_jumped = true
+	
+	thrust.play("thrust")
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,5 +38,5 @@ func _physics_process(delta: float) -> void:
 		die()
 		
 func die() -> void:
-	set_physics_process(false)
-	animated_sprite_2d.stop()
+	SignalHub.emit_on_flame_died()
+	get_tree().paused = true

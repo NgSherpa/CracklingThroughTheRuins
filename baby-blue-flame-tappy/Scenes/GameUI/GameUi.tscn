@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://fdemetysu1eh"]
+
+[ext_resource type="Script" uid="uid://72q0i4iaaf1e" path="res://Scenes/GameUI/GameUi.gd" id="1_81r78"]
+[ext_resource type="FontFile" uid="uid://dvw0gkpmwialb" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="1_diq3n"]
+[ext_resource type="AudioStream" uid="uid://3ua15eg8c4r8" path="res://Assets/audio/Game over.mp3" id="3_556m7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_81r78"]
+font = ExtResource("1_diq3n")
+font_size = 80
+font_color = Color(0.85490197, 0.3647059, 0.32156864, 1)
+outline_size = 8
+outline_color = Color(0.0032820348, 0.0003657795, 0.0002788274, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_556m7"]
+font = ExtResource("1_diq3n")
+font_size = 96
+font_color = Color(0.6943442, 0.065829955, 0.0908693, 1)
+outline_size = 8
+outline_color = Color(0.0032820348, 0.0003657795, 0.0002788274, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iq8cv"]
+font = ExtResource("1_diq3n")
+font_size = 96
+font_color = Color(0.8795062, 0.6736833, 0.45186543, 1)
+outline_size = 10
+outline_color = Color(0.67428964, 0.12427545, 0.18261029, 1)
+
+[node name="GameUI" type="Control" unique_id=1639992179]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81r78")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=185498779]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=95851344]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "000"
+label_settings = SubResource("LabelSettings_81r78")
+
+[node name="GameOverLabel" type="Label" parent="MarginContainer" unique_id=393020594]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over!!"
+label_settings = SubResource("LabelSettings_556m7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MarginContainer" unique_id=25160078]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Space"
+label_settings = SubResource("LabelSettings_iq8cv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="." unique_id=46614387]
+stream = ExtResource("3_556m7")
+
+[node name="WaitingTimer" type="Timer" parent="." unique_id=379082412]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="WaitingTimer" to="." method="_on_waiting_timer_timeout"]
