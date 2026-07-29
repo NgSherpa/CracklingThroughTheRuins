@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b7m1ub4mwcdjl"]
+
+[ext_resource type="Script" uid="uid://d227qe6pfndhs" path="res://Scenes/Ruinss/Ruinss.gd" id="1_67vok"]
+[ext_resource type="PackedScene" uid="uid://bfmtmsm77uhsm" path="res://Scenes/Sparkles aka Laser/SparklesAkaLaser.tscn" id="1_c4eqt"]
+[ext_resource type="PackedScene" uid="uid://secbetq2deyk" path="res://Scenes/Ruins aka Pipes/Pipe.tscn" id="2_67vok"]
+[ext_resource type="AudioStream" uid="uid://cxalk5v2sa11l" path="res://Assets/audio/Leaves Rustling Sound Effect aka score_[cut_1sec].mp3" id="4_eyueb"]
+
+[node name="Ruinss" type="Node2D" unique_id=724256442]
+script = ExtResource("1_67vok")
+
+[node name="Sparkles aka Laser" parent="." unique_id=703480301 instance=ExtResource("1_c4eqt")]
+position = Vector2(0, -106)
+
+[node name="Upper" parent="." unique_id=2133405413 instance=ExtResource("2_67vok")]
+position = Vector2(0, -225)
+rotation = 3.1415927
+
+[node name="Lower" parent="." unique_id=1885887242 instance=ExtResource("2_67vok")]
+position = Vector2(0, 173)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=1285598289]
+position = Vector2(250, 0)
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=798209945]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="." unique_id=272020726]
+stream = ExtResource("4_eyueb")
+
+[connection signal="body_entered" from="Sparkles aka Laser" to="." method="_on_sparkles_aka_laser_body_entered"]
+[connection signal="body_exited" from="Sparkles aka Laser" to="." method="_on_sparkles_aka_laser_body_exited"]
+[connection signal="body_entered" from="Upper" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Lower" to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_exited"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

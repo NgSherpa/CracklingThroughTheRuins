@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://4epef74dp68r"]
+
+[ext_resource type="Script" uid="uid://bwyoqjentjqkd" path="res://Scenes/Changes/ComplexChange.gd" id="1_fqsg8"]
+
+[sub_resource type="Animation" id="Animation_fqsg8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0352941, 0.0352941, 0.0352941, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ltbym"]
+resource_name = "fade"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.0352941, 0.0352941, 0.0352941, 0), Color(0.03529412, 0.03529412, 0.03529412, 1), Color(0.03529412, 0.03529412, 0.03529412, 1), Color(0.0352941, 0.0352941, 0.0352941, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m7sdj"]
+_data = {
+&"RESET": SubResource("Animation_fqsg8"),
+&"fade": SubResource("Animation_ltbym")
+}
+
+[node name="ComplexChange" type="CanvasLayer" unique_id=1092936838]
+process_mode = 3
+layer = 2
+script = ExtResource("1_fqsg8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=680429072]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0352941, 0.0352941, 0.0352941, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1344313051]
+libraries/ = SubResource("AnimationLibrary_m7sdj")

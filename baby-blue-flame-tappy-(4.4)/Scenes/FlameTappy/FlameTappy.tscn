@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://1qx4koplnyhr"]
+
+[ext_resource type="Script" uid="uid://deei712dauwxb" path="res://Scenes/FlameTappy/FlameTappy.gd" id="1_6wdhf"]
+[ext_resource type="Texture2D" uid="uid://fhxg88vakx2r" path="res://Assets/plane/Baby_Flame 1.png" id="1_t82v3"]
+[ext_resource type="Texture2D" uid="uid://rmxsibyomufu" path="res://Assets/plane/Baby_Flame 2.png" id="2_6wdhf"]
+[ext_resource type="Texture2D" uid="uid://cxklajqmrkqgm" path="res://Assets/plane/Baby_Flame 3.png" id="3_v6dr3"]
+[ext_resource type="Texture2D" uid="uid://bm40xrj0w0s12" path="res://Assets/plane/Baby_Flame 4.png" id="4_c1qx8"]
+[ext_resource type="Texture2D" uid="uid://f80cocbo6twk" path="res://Assets/plane/Baby_Flame 5.png" id="5_uyw1t"]
+[ext_resource type="Texture2D" uid="uid://d3ktvtr8t30ir" path="res://Assets/plane/Baby_Flame 6.png" id="6_1wuin"]
+[ext_resource type="AudioStream" uid="uid://bl3a81lnk0ff1" path="res://Assets/audio/Fire crackle aka engine_[cut_9sec].mp3" id="8_v6dr3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7gmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t82v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6wdhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v6dr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c1qx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uyw1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1wuin")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6dr3"]
+radius = 39.0
+height = 124.0
+
+[sub_resource type="Animation" id="Animation_6wdhf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v6dr3"]
+resource_name = "thrust"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00078036886, 0.100277394, 0.3, 1.0029906),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.4363323129985824, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c1qx8"]
+_data = {
+&"RESET": SubResource("Animation_6wdhf"),
+&"thrust": SubResource("Animation_v6dr3")
+}
+
+[node name="FlameTappy" type="CharacterBody2D" unique_id=1557961098]
+collision_layer = 2
+script = ExtResource("1_6wdhf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1834488317]
+scale = Vector2(0.075, 0.075)
+sprite_frames = SubResource("SpriteFrames_f7gmh")
+animation = &"fly"
+autoplay = "fly"
+frame = 4
+frame_progress = 0.53533024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1619053405]
+position = Vector2(16, 16)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_v6dr3")
+
+[node name="Thrust" type="AnimationPlayer" parent="." unique_id=1795895680]
+libraries/ = SubResource("AnimationLibrary_c1qx8")
+
+[node name="Engine" type="AudioStreamPlayer" parent="." unique_id=148042175]
+stream = ExtResource("8_v6dr3")
+volume_db = -13.542
+autoplay = true
+parameters/looping = true

@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://ceye0pgp7ui51"]
+
+[ext_resource type="Texture2D" uid="uid://ii7hgyl145be" path="res://Assets/background/Sky .png" id="1_i3fi7"]
+[ext_resource type="Script" uid="uid://b248vthiu4k2p" path="res://Scenes/Main/Main.gd" id="1_w20t6"]
+[ext_resource type="LabelSettings" uid="uid://drlqhhmwn2s5v" path="res://Resources/RedLabel96.tres" id="2_o8wgc"]
+[ext_resource type="FontFile" uid="uid://dvw0gkpmwialb" path="res://Assets/fonts/LuckiestGuy-Regular.ttf" id="3_w20t6"]
+[ext_resource type="LabelSettings" uid="uid://cai4csyyu1kpl" path="res://Resources/RedLabel50.tres" id="4_aw1lf"]
+[ext_resource type="AudioStream" uid="uid://cbehbnkkr8pto" path="res://Assets/audio/Bg music.mp3" id="5_o8wgc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5s61s"]
+font = ExtResource("3_w20t6")
+font_size = 70
+outline_size = 15
+outline_color = Color(0, 0.19215687, 0.39607844, 1)
+
+[sub_resource type="Animation" id="Animation_o8wgc"]
+resource_name = "Flash"
+length = 2.0
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC/PressSpaceLabel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.51064956, 0.7446194, 1, 1.4284512, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.43529412), Color(1, 1, 1, 0), Color(1, 1, 1, 0.43529412), Color(1, 1, 1, 0.64705884), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w20t6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MC/PressSpaceLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aw1lf"]
+_data = {
+&"Flash": SubResource("Animation_o8wgc"),
+&"RESET": SubResource("Animation_w20t6")
+}
+
+[node name="Main" type="Control" unique_id=478816181]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w20t6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=606147357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i3fi7")
+expand_mode = 1
+
+[node name="MC" type="MarginContainer" parent="." unique_id=1319853076]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 96
+theme_override_constants/margin_bottom = 96
+
+[node name="Label4" type="Label" parent="MC" unique_id=1206567967]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Crackling Through
+The RUINSSS.."
+label_settings = ExtResource("2_o8wgc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpaceLabel" type="Label" parent="MC" unique_id=1039205640]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Space 
+To Play"
+label_settings = SubResource("LabelSettings_5s61s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="MC" unique_id=1652747921]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "000"
+label_settings = ExtResource("4_aw1lf")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="MC" unique_id=683780872]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "HIGH SCORE"
+label_settings = ExtResource("4_aw1lf")
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1746346762]
+stream = ExtResource("5_o8wgc")
+volume_db = -5.821
+autoplay = true
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1636182548]
+libraries/ = SubResource("AnimationLibrary_aw1lf")
+autoplay = &"Flash"

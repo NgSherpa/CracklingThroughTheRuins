@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba7anbo64snqg"
+path="res://.godot/imported/Fire crackle aka engine.mp3-750f72fc411f31d2f541680ceed0d6b2.mp3str"
+
+[deps]
+
+source_file="res://Assets/audio/Fire crackle aka engine.mp3"
+dest_files=["res://.godot/imported/Fire crackle aka engine.mp3-750f72fc411f31d2f541680ceed0d6b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

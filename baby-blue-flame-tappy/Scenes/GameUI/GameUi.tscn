@@ -25,6 +25,61 @@ font_color = Color(0.8795062, 0.6736833, 0.45186543, 1)
 outline_size = 10
 outline_color = Color(0.67428964, 0.12427545, 0.18261029, 1)
 
+[sub_resource type="Animation" id="Animation_556m7"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/GameOverLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667, 2.9968135),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iq8cv"]
+resource_name = "flash"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PressSpaceLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwnss"]
+resource_name = "flash2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/GameOverLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.0072997, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jwnss"]
+_data = {
+&"RESET": SubResource("Animation_556m7"),
+&"flash": SubResource("Animation_iq8cv"),
+&"flash2": SubResource("Animation_jwnss")
+}
+
 [node name="GameUI" type="Control" unique_id=1639992179]
 process_mode = 3
 layout_mode = 3
@@ -56,6 +111,7 @@ label_settings = SubResource("LabelSettings_81r78")
 
 [node name="GameOverLabel" type="Label" parent="MarginContainer" unique_id=393020594]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Game Over!!"
@@ -65,6 +121,7 @@ vertical_alignment = 1
 
 [node name="PressSpaceLabel" type="Label" parent="MarginContainer" unique_id=25160078]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Press Space"
@@ -76,7 +133,14 @@ vertical_alignment = 1
 stream = ExtResource("3_556m7")
 
 [node name="WaitingTimer" type="Timer" parent="." unique_id=379082412]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
+
+[node name="PressSpaceAnimation" type="AnimationPlayer" parent="." unique_id=1830829641]
+libraries/ = SubResource("AnimationLibrary_jwnss")
+
+[node name="GameOverAnimation" type="AnimationPlayer" parent="." unique_id=1713483826]
+libraries/ = SubResource("AnimationLibrary_jwnss")
+autoplay = &"RESET"
 
 [connection signal="timeout" from="WaitingTimer" to="." method="_on_waiting_timer_timeout"]

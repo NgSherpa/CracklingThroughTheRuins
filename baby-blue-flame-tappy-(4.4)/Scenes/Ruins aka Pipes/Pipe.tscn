@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://secbetq2deyk"]
+
+[ext_resource type="Texture2D" uid="uid://cuyd1c5hx35gk" path="res://Assets/pipes/Ruins aka pipe.png" id="1_irrc1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irrc1"]
+size = Vector2(142, 851.5)
+
+[node name="Pipe" type="Area2D" unique_id=2133405413]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=803215170]
+position = Vector2(-205, -179)
+texture = ExtResource("1_irrc1")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1637501127]
+position = Vector2(-3, 435.25)
+shape = SubResource("RectangleShape2D_irrc1")

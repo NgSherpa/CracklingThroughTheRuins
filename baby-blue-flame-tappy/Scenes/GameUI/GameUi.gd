@@ -7,6 +7,8 @@ class_name GameUI
 @onready var game_over_label: Label = $MarginContainer/GameOverLabel
 @onready var press_space_label: Label = $MarginContainer/PressSpaceLabel
 @onready var score_label: Label = $MarginContainer/ScoreLabel
+@onready var press_space_animation: AnimationPlayer = $PressSpaceAnimation
+@onready var game_over_animation: AnimationPlayer = $GameOverAnimation
 
 var _points : int = 0
 
@@ -23,6 +25,7 @@ func _ready() -> void:
 
 func on_flame_died() -> void:
 	game_over_label.show()
+	game_over_animation.play("flash2")
 	game_over_sound.play()
 	waiting_timer.start()
 	ScoreManager.high_score = _points
@@ -40,4 +43,5 @@ func update_score_label() -> void:
 func _on_waiting_timer_timeout() -> void:
 	game_over_label.hide()
 	press_space_label.show()
+	press_space_animation.play("flash")
 	
